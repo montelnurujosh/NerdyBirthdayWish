@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "pnpm --filter @workspace/nerdy-birthday-wish dev",
-    "build": "pnpm --filter @workspace/nerdy-birthday-wish build",
+    "build": "pnpm --filter @workspace/nerdy-birthday-wish build && node -e \"const fs=require('fs'); fs.cpSync('artifacts/nerdy-birthday-wish/dist', 'dist', {recursive: true});\"",
     "preview": "pnpm --filter @workspace/nerdy-birthday-wish serve",
     "typecheck": "pnpm --filter @workspace/nerdy-birthday-wish typecheck"
   },
