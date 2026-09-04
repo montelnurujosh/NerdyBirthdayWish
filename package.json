@@ -1,0 +1,19 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm --filter @workspace/nerdy-birthday-wish dev",
+    "build": "pnpm --filter @workspace/nerdy-birthday-wish build",
+    "preview": "pnpm --filter @workspace/nerdy-birthday-wish serve",
+    "typecheck": "pnpm --filter @workspace/nerdy-birthday-wish typecheck"
+  },
+  "private": true,
+  "dependencies": {
+    "@replit/connectors-sdk": "^0.4.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "typescript": "~5.9.3"
+  }
+}

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Nerdy Birthday Wish"
+description = "A playful, romantic birthday wish website for a special girl, filled with nerdy details, heartfelt messages, and interactive surprises."
+version = "1.0.0"
+id = "artifacts/nerdy-birthday-wish"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24145
+
+[services.development]
+run = "pnpm --filter @workspace/nerdy-birthday-wish run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/nerdy-birthday-wish", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/nerdy-birthday-wish/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24145"
+BASE_PATH = "/"
